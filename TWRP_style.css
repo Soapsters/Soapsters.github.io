@@ -1,0 +1,48 @@
+body {
+  background-image: url("https://www.shutterstock.com/blog/wp-content/uploads/sites/5/2020/05/shutterstock_1556534186.jpg?w=750");
+}
+h1 {
+    color: white;
+    font-family: 'Bebas Neue', cursive;
+    text-align: center;
+    font-size: 5em;
+}
+h2 {
+    color: white;
+    font-family: 'Bebas Neue', cursive;
+    text-align: center;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.right {
+    margin-left: auto;
+    float: right;
+}
+
+.left {
+    margin-right: auto;
+    float: left;
+}
+
+.nofloats {
+    float: none;
+    clear: both;
+}
+
+p {
+    color: white;
+}
+
+ul {
+    color: white;
+}
+
+table, th, td {
+    border:1px solid white;
+    color: white;
+}
