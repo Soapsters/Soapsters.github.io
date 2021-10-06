@@ -5,7 +5,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <title>Homepage</title>
     <link href="TWRP_style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
