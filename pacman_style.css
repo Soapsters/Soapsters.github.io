@@ -1,0 +1,88 @@
+body {
+    background-image: url("pac_man.jpg");
+    line-height: 1.88889;
+	margin: 0; 
+	padding: 0;
+  }
+  h1 {
+      color: goldenrod;
+      font: 75% courier, monospace;
+      text-align: center;
+      font-size: 5em;
+  }
+  h2 {
+      color: goldenrod;
+      font: 75% courier, monospace;
+      text-align: center;
+      font-size: 4em;
+  }
+  h3 { 
+	font: italic normal 1.4em courier, monospace;
+	letter-spacing: 1px; 
+	margin-bottom: 0; 
+	color: goldenrod;
+	}
+
+  p { 
+        margin-top: 0; 
+        text-align: justify;
+    }
+
+    a:link { 
+        font-weight: bold; 
+        text-decoration: none; 
+        color: goldenrod;
+        }
+    a:visited { 
+        font-weight: bold; 
+        text-decoration: none; 
+        color: cyan;
+        }
+    a:hover, a:focus, a:active { 
+        text-decoration: underline; 
+        color: red;
+        }
+    abbr {
+        border-bottom: none;
+        }
+  .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+  }
+  
+  .right {
+      margin-left: auto;
+      float: right;
+  }
+  
+  .left {
+      margin-right: auto;
+      float: left;
+  }
+  
+  .nofloats {
+      float: none;
+      clear: both;
+  }
+  
+  p {
+      color: white;
+  }
+
+  .page-wrapper { 
+	background: transparent url(https://media0.giphy.com/media/l8G8sdTRURRBANPpPR/giphy.gif) no-repeat top center;
+	padding: 0 175px 0 110px;  
+	margin: 0; 
+	position: relative;
+	}
+
+    footer { 
+        text-align: center;
+    }
+
+    ul {
+        list-style-image:
+        url('cherrybullet.jpg');
+    }
