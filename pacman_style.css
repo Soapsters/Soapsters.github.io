@@ -28,6 +28,10 @@ body {
         text-align: justify;
     }
 
+    body, h1, h2, h3 { 
+        font-family: 'Press Start 2P', cursive; 
+    }
+
     a:link { 
         font-weight: bold; 
         text-decoration: none; 
