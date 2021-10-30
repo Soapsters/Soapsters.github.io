@@ -1,3 +1,4 @@
+/*creating the body and creating header styles*/
 body {
     background-image: url("pac_man.jpg");
     line-height: 1.88889;
@@ -30,11 +31,11 @@ body {
         margin-top: 0; 
         text-align: justify;
     }
-
+    /*setting font style*/
     body, h1, h2, h3 { 
         font-family: 'Press Start 2P', cursive; 
     }
-
+    /*setting colors of links, visited links, and hover colors*/
     a:link { 
         font-weight: bold; 
         text-decoration: none; 
@@ -52,6 +53,7 @@ body {
     abbr {
         border-bottom: none;
         }
+    /*creeate center, right, and left classes to call*/
   .center {
       display: block;
       margin-left: auto;
@@ -77,7 +79,7 @@ body {
   p {
       color: white;
   }
-
+  /*creating the page wrapper and footer*/
   .page-wrapper { 
 	background: transparent url(https://media0.giphy.com/media/l8G8sdTRURRBANPpPR/giphy.gif) no-repeat top center;
 	padding: 0 175px 0 110px;  
