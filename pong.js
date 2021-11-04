@@ -134,17 +134,16 @@ function update(){
     ball.x += ball.velocityX;
     ball.y += ball.velocityY;
     
-    // computer plays for itself, and we must be able to beat it
     // simple AI
     com.y += ((ball.y - (com.y + com.height/2)))*0.1;
     
-    // when the ball collides with bottom and top walls we inverse the y velocity.
+    // inverse y
     if(ball.y - ball.radius < 0 || ball.y + ball.radius > canvas.height){
         ball.velocityY = -ball.velocityY;
         wall.play();
     }
     
-    // we check if the paddle hit the user or the com paddle
+    // check paddle hit
     let player = (ball.x + ball.radius < canvas.width/2) ? user : com;
     
     // if the ball hits a paddle
