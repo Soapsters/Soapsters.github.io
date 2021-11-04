@@ -153,17 +153,13 @@ function update(){
         hit.play();
         // we check where the ball hits the paddle
         let collidePoint = (ball.y - (player.y + player.height/2));
-        // normalize the value of collidePoint, we need to get numbers between -1 and 1.
-        // -player.height/2 < collide Point < player.height/2
+
         collidePoint = collidePoint / (player.height/2);
         
-        // when the ball hits the top of a paddle we want the ball, to take a -45degees angle
-        // when the ball hits the center of the paddle we want the ball to take a 0degrees angle
-        // when the ball hits the bottom of the paddle we want the ball to take a 45degrees
-        // Math.PI/4 = 45degrees
+        // degrees of the ball based off of the collide point
         let angleRad = (Math.PI/4) * collidePoint;
         
-        // change the X and Y velocity direction
+        // to change the X and the Y direction
         let direction = (ball.x + ball.radius < canvas.width/2) ? 1 : -1;
         ball.velocityX = direction * ball.speed * Math.cos(angleRad);
         ball.velocityY = ball.speed * Math.sin(angleRad);
@@ -173,28 +169,14 @@ function update(){
     }
 }
 
-// render function, the function that does al the drawing
+//draw the paddles, ball, and user's scores for animation
 function render(){
-    
-    // clear the canvas
     drawRect(0, 0, canvas.width, canvas.height, "#000");
-    
-    // draw the user score to the left
     drawText(user.score,canvas.width/4,canvas.height/5);
-    
-    // draw the COM score to the right
     drawText(com.score,3*canvas.width/4,canvas.height/5);
-    
-    // draw the net
     drawNet();
-    
-    // draw the user's paddle
     drawRect(user.x, user.y, user.width, user.height, user.color);
-    
-    // draw the COM's paddle
     drawRect(com.x, com.y, com.width, com.height, com.color);
-    
-    // draw the ball
     drawArc(ball.x, ball.y, ball.radius, ball.color);
 }
 function game(){
