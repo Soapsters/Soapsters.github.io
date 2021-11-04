@@ -4,17 +4,6 @@ const canvas = document.getElementById("pong");
 // getContext of canvas = methods and properties to draw and do a lot of thing to the canvas
 const ctx = canvas.getContext('2d');
 
-// load sounds
-let hit = new Audio();
-let wall = new Audio();
-let userScore = new Audio();
-let comScore = new Audio();
-
-hit.src = "sounds/hit.mp3";
-wall.src = "sounds/wall.mp3";
-comScore.src = "sounds/comScore.mp3";
-userScore.src = "sounds/userScore.mp3";
-
 // Ball object
 const ball = {
     x : canvas.width/2,
@@ -23,7 +12,7 @@ const ball = {
     velocityX : 5,
     velocityY : 5,
     speed : 7,
-    color : "YELLOW",
+    color : "WHITE",
 }
 
 // User Paddle
@@ -33,7 +22,7 @@ const user = {
     width : 10,
     height : 100,
     score : 0,
-    color : "WHITE"
+    color : "YELLOW"
 }
 
 // COM Paddle
@@ -43,7 +32,7 @@ const com = {
     width : 10,
     height : 100,
     score : 0,
-    color : "WHITE"
+    color : "CYAN"
 }
 
 // NET
@@ -122,11 +111,9 @@ function update(){
     // change the score of players, if the ball goes to the left "ball.x<0" computer win, else if "ball.x > canvas.width" the user win
     if( ball.x - ball.radius < 0 ){
         com.score++;
-        comScore.play();
         resetBall();
     }else if( ball.x + ball.radius > canvas.width){
         user.score++;
-        userScore.play();
         resetBall();
     }
     
@@ -140,7 +127,6 @@ function update(){
     // inverse y
     if(ball.y - ball.radius < 0 || ball.y + ball.radius > canvas.height){
         ball.velocityY = -ball.velocityY;
-        wall.play();
     }
     
     // check paddle hit
@@ -148,8 +134,6 @@ function update(){
     
     // if the ball hits a paddle
     if(collision(ball,player)){
-        // play sound
-        hit.play();
         // we check where the ball hits the paddle
         let collidePoint = (ball.y - (player.y + player.height/2));
 
