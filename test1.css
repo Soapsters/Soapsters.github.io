@@ -1,5 +1,15 @@
+h1 {
+    color: white;
+    text-align: center;
+}
 body{
     background-color: dimgray;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 #pong{
     border: 2px solid #FFF;
