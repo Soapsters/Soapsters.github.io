@@ -23,13 +23,13 @@ const ball = {
     velocityX : 5,
     velocityY : 5,
     speed : 7,
-    color : "WHITE"
+    color : "YELLOW",
 }
 
 // User Paddle
 const user = {
-    x : 0, // left side of canvas
-    y : (canvas.height - 100)/2, // -100 the height of paddle
+    x : 0, 
+    y : (canvas.height - 100)/2, 
     width : 10,
     height : 100,
     score : 0,
@@ -38,8 +38,8 @@ const user = {
 
 // COM Paddle
 const com = {
-    x : canvas.width - 10, // - width of paddle
-    y : (canvas.height - 100)/2, // -100 the height of paddle
+    x : canvas.width - 10,
+    y : (canvas.height - 100)/2, 
     width : 10,
     height : 100,
     score : 0,
