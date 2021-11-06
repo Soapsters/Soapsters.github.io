@@ -1,10 +1,22 @@
-// select canvas element
 const canvas = document.getElementById("pong");
-
-// getContext of canvas = methods and properties to draw and do a lot of thing to the canvas
 const ctx = canvas.getContext('2d');
 
-// Ball object
+// draw a rectangle, will be used to draw paddles
+function drawRect(x, y, w, h, color){
+    ctx.fillStyle = color;
+    ctx.fillRect(x, y, w, h);
+}
+
+// draw circle, will be used to draw the ball
+function drawArc(x, y, r, color){
+    ctx.fillStyle = color;
+    ctx.beginPath();
+    ctx.arc(x,y,r,0,Math.PI*2,true);
+    ctx.stroke();
+    ctx.fill();
+}
+
+// put ball in the middle of the canvas
 const ball = {
     x : canvas.width/2,
     y : canvas.height/2,
@@ -39,36 +51,20 @@ const com = {
 const net = {
     x : (canvas.width - 2)/2,
     y : 0,
-    height : 10,
+    height : 20,
     width : 2,
     color : "WHITE"
 }
 
-// draw a rectangle, will be used to draw paddles
-function drawRect(x, y, w, h, color){
-    ctx.fillStyle = color;
-    ctx.fillRect(x, y, w, h);
-}
-
-// draw circle, will be used to draw the ball
-function drawArc(x, y, r, color){
-    ctx.fillStyle = color;
-    ctx.beginPath();
-    ctx.arc(x,y,r,0,Math.PI*2,true);
-    ctx.closePath();
-    ctx.fill();
-}
-
+//canvas.addEventListener("keypress", update);
 // listening to the mouse
-canvas.addEventListener("mousemove", getMousePos);
+canvas.addEventListener("mousemove", getPosition);
 
-function getMousePos(evt){
+function getPosition(evt){
     let rect = canvas.getBoundingClientRect();
-    
     user.y = evt.clientY - rect.top - user.height/2;
 }
 
-// when COM or USER scores, we reset the ball
 function resetBall(){
     ball.x = canvas.width/2;
     ball.y = canvas.height/2;
@@ -86,7 +82,7 @@ function drawNet(){
 // draw text
 function drawText(text,x,y){
     ctx.fillStyle = "#FFF";
-    ctx.font = "75px fantasy";
+    ctx.font = "75px VT323";
     ctx.fillText(text, x, y);
 }
 
@@ -105,10 +101,8 @@ function collision(b,p){
     return p.left < b.right && p.top < b.bottom && p.right > b.left && p.bottom > b.top;
 }
 
-// update function, the function that does all calculations
+// score
 function update(){
-    
-    // change the score of players, if the ball goes to the left "ball.x<0" computer win, else if "ball.x > canvas.width" the user win
     if( ball.x - ball.radius < 0 ){
         com.score++;
         resetBall();
@@ -116,8 +110,8 @@ function update(){
         user.score++;
         resetBall();
     }
-    
-    // the ball has a velocity
+
+    //give the ball a velocity
     ball.x += ball.velocityX;
     ball.y += ball.velocityY;
     
@@ -132,7 +126,6 @@ function update(){
     // check paddle hit
     let player = (ball.x + ball.radius < canvas.width/2) ? user : com;
     
-    // if the ball hits a paddle
     if(collision(ball,player)){
         // we check where the ball hits the paddle
         let collidePoint = (ball.y - (player.y + player.height/2));
@@ -166,8 +159,8 @@ function game(){
     update();
     render();
 }
+
 // number of frames per second
 let framePerSecond = 50;
 
-//call the game function 50 times every 1 Sec
 let loop = setInterval(game,1000/framePerSecond);
