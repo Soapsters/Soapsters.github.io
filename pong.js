@@ -56,10 +56,8 @@ const net = {
     color : "WHITE"
 }
 
-//canvas.addEventListener("keypress", update);
 // listening to the mouse
 canvas.addEventListener("mousemove", getPosition);
-
 function getPosition(evt){
     let rect = canvas.getBoundingClientRect();
     user.y = evt.clientY - rect.top - user.height/2;
@@ -115,7 +113,7 @@ function update(){
     ball.x += ball.velocityX;
     ball.y += ball.velocityY;
     
-    // simple AI
+    // paddle follow ball
     com.y += ((ball.y - (com.y + com.height/2)))*0.1;
     
     // inverse y
@@ -146,21 +144,27 @@ function update(){
 }
 
 //draw the paddles, ball, and user's scores for animation
-function render(){
+function drawEverything(){
     drawRect(0, 0, canvas.width, canvas.height, "#000");
-    drawText(user.score,canvas.width/4,canvas.height/5);
-    drawText(com.score,3*canvas.width/4,canvas.height/5);
+    drawText(user.score,canvas.width/4,canvas.height/5, "75px VT323");
+    drawText(com.score,3*canvas.width/4,canvas.height/5, "75px VT323");
     drawNet();
     drawRect(user.x, user.y, user.width, user.height, user.color);
     drawRect(com.x, com.y, com.width, com.height, com.color);
     drawArc(ball.x, ball.y, ball.radius, ball.color);
 }
+
+drawText()
+
 function game(){
+    drawEverything();
     update();
-    render();
 }
 
-// number of frames per second
-let framePerSecond = 50;
+document.body.onkeyup = function(e){
+    if(e.keyCode == 32){
+        let frames = 50;
+        let loop = setInterval(game,1000/frames);
+    }
+}
 
-let loop = setInterval(game,1000/framePerSecond);
