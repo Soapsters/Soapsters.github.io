@@ -27,7 +27,7 @@ const ball = {
     color : "WHITE",
 }
 
-// User Paddle
+// User
 const user = {
     x : 0, 
     y : (canvas.height - 100)/2, 
@@ -37,7 +37,7 @@ const user = {
     color : "YELLOW"
 }
 
-// COM Paddle
+// Computer
 const com = {
     x : canvas.width - 10,
     y : (canvas.height - 100)/2, 
@@ -144,7 +144,7 @@ function update(){
 }
 
 //draw the paddles, ball, and user's scores for animation
-function drawEverything(){
+function render(){
     drawRect(0, 0, canvas.width, canvas.height, "#000");
     drawText(user.score,canvas.width/4,canvas.height/5, "75px VT323");
     drawText(com.score,3*canvas.width/4,canvas.height/5, "75px VT323");
@@ -154,17 +154,15 @@ function drawEverything(){
     drawArc(ball.x, ball.y, ball.radius, ball.color);
 }
 
-drawText()
-
-function game(){
-    drawEverything();
+function startGame(){
+    render();
     update();
 }
 
 document.body.onkeyup = function(e){
     if(e.keyCode == 32){
+        document.getElementById("id01").innerHTML = "PONG (HIT SPACE TO INCREASE SPEED)";
         let frames = 50;
-        let loop = setInterval(game,1000/frames);
+        let loop = setInterval(startGame,1000/frames);
     }
 }
-
