@@ -161,7 +161,7 @@ function startGame(){
 
 document.body.onkeyup = function(e){
     if(e.keyCode == 32){
-        document.getElementById("id01").innerHTML = "PONG (HIT SPACE TO INCREASE SPEED)";
+        document.getElementById("id01").innerHTML = "PONG (HIT SPACE TO INCREASE SPEED)(USE THE MOUSE FOR PADDLE)";
         let frames = 50;
         let loop = setInterval(startGame,1000/frames);
     }
