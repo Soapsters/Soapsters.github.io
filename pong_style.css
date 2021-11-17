@@ -8,6 +8,11 @@ body{
     background-image: url(https://images.unsplash.com/photo-1511882150382-421056c89033?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=871&q=80);
     font-family: 'VT323', monospace;
 }
+p {
+    color: yellow;
+    font-size: 30px;
+    text-align: center;
+}
 
 .blinking {
     animation: opacity 2s ease-in-out infinite;
