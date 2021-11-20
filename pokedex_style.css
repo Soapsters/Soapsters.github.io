@@ -1,0 +1,15 @@
+body {
+    background-color: black;
+}
+
+h1 {
+    font-family: 'Pokemon Solid', sans-serif;
+    color: #ffcc03;
+    outline: 5px solid #3b4cca;
+    text-align: center;
+    font-size: 50px;
+}
+
+.stroke-text {
+    -webkit-text-stroke: #3b4cca;
+}
