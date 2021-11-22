@@ -1,15 +1,29 @@
-body {
-    background-color: black;
+#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
 }
 
-h1 {
-    font-family: 'Pokemon Solid', sans-serif;
-    color: #ffcc03;
-    outline: 5px solid #3b4cca;
-    text-align: center;
+body  {
+    background-image: url("pokeball.jpg");
+    }
+
+img {
+    align-content: left;
+}
+
+h3 {
+    font-family: 'VT323', monospace;
+    color: black;
+    text-align: left;
+    font-size: 30px;
+}
+
+.myDiv {
+    float: right;
     font-size: 50px;
-}
-
-.stroke-text {
-    -webkit-text-stroke: #3b4cca;
+    color: black;
+    font-family: 'VT323', monospace;
 }
