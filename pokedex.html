@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <link href="pokedex_style.css" rel="stylesheet">
-    <link href="http://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <title>Pokedex</title>
 </head>
 <body>
-    <h1 class="stroke-text">Pokedex</h1>
-    <canvas id="pong" width="800" height="400"></canvas>
-    <script src="pong.js"></script>
+    <img src="pokedextitle.png" alt="title" class="center"></img>
+    <h3>Type Pokemon name (all lowercase) or ID (1-898) to see stats</h3>
+    <form id="myForm">
+        <input type="text" id="pokemonName" name="myInput"/>
+    </form>
+    <button id="enterButton">I choose you!</button>
+    <div class="myDiv" id="response"></div>
+    <script src="pokedexjs.js"></script>
 </body>
 </html>
