@@ -1,14 +1,7 @@
-#background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 50%;
-}
-
 body  {
-    background-image: url("pokeball.jpg");
-    }
+    height: 100%;
+    background: linear-gradient(90deg, darkred 75%, white 25%)
+}
 
 img {
     align-content: left;
@@ -22,8 +15,21 @@ h3 {
 }
 
 .myDiv {
-    float: right;
     font-size: 50px;
     color: black;
     font-family: 'VT323', monospace;
+    vertical-align: top;
+    float: right;
+}
+
+br {
+    display: block;
+    margin: 5px 0;
+}
+
+.vertical {
+    border-left: 10px solid black;
+    height: 110%;
+    position:absolute;
+    left: 75%;
 }
