@@ -9,5 +9,6 @@ console.log(response.status);
 let json = await response.json();
 console.log(json);
 document.getElementById('response').innerHTML = '<b>' + json.name + 
-'</b><br/><img src="' + json.sprites.front_default + '" />';
+'</b><br><img src="' + json.sprites.front_default + '" />' + '<br><h3> Type: ' + json.types[0].type.name + '</h3></b>'
++ '<h3> Height: ' + json.height + ' dm </h3>' + '<h3> Weight: ' + json.weight + ' hg </h3>';
 }
